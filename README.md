@@ -1,4 +1,4 @@
-last update: 1/16/2022 10:11pm
+last update: 1/16/2022 10:45pm
 
 **DOH Metro Manila Hospital Locator & Registration**
 - i narrowed it down to DOH metro manila hospitals para easier :>
