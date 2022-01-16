@@ -86,6 +86,11 @@ Patient createinfo()
 		exit(0);
 	}
 	
+	//getting address
+	printf("Address: ");
+	fgets(info.address,sizeof(info.address),stdin);	
+	fgets_remove_newline(info.address);	
+	
 	displayinfo(info);
 	return info;
 }
@@ -116,9 +121,10 @@ bool check_number(char num[])
 }
 void displayinfo(Patient info)
 {
-	printf("Patient info: \n");
+	printf("\nPatient info: \n");
 	printf("Name: %s, %s\n", info.last_name, info.first_name);
 	printf("Age: %d\n", info.age);
 	printf("Sex: %s\n", info.sex);
 	printf("Contact Number: %s\n", info.number);
+	printf("Address: %s\n", info.address);
 }

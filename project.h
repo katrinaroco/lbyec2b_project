@@ -4,7 +4,7 @@
 typedef struct
 {
 	char hospital[100];
-	char last_name[100], first_name[100];
+	char last_name[100], first_name[100], address[100];
 	char number[15];
 	int age;
 	char sex[1];

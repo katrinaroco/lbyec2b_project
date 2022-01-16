@@ -33,8 +33,7 @@ int main()
 			createinfo();			
 			break;
 	}
-
+	
 	printf("yay!\n");
-
 
 }
