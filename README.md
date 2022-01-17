@@ -40,9 +40,10 @@ progress:
 5. End
 
 **To do:**
-1. user will be able to choose a hospital
-2. user will be able to input N records (patient's info)
-3. show patient's chosen hospital at the end of the program
+1. code to open and read the csv file
+2. user will be able to choose a hospital
+3. user will be able to input N records (patient's info)
+4. show patient's chosen hospital at the end of the program
 
 **optional:**
 1. make it more complicated (??) idk if ok na itong code natin huhu maybe it's too /simple/ for sir's standards chz
