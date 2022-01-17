@@ -7,11 +7,10 @@ last update: 1/16/2022 10:45pm
 - hospital name, city, full address, contact number
 
 progress:
-- not yet done, haven't typed every city in the program
-  - i think let's source the list from here na lang: https://doh.gov.ph/doh-hospitals-directory
-- haven't started on the csv file since idk if it'll work on dev c++
-- i tried using visual code but it's not working T^T i've been trying to figure it out for 2 days na HAHAHHA i kinda give up na tbh (i installed some extensions na but my makefile is diff from youtube T___T)
-link: https://www.youtube.com/watch?v=ZSlUc8Y1Ai0&t=159s
+- [DONE] encoded every city on the csv file
+  - list from here: https://doh.gov.ph/doh-hospitals-directory
+  - 20 hospitals lang from metro manila thooo idk if it's enough huhu
+  - didn't include the contact number cuz iba-iba format 
 
 **Patient registration/information stored in a structure**
 - last name, first name, age, sex, contact number, address, chosen hospital 
@@ -36,15 +35,14 @@ progress:
 1. Choose city from the presented choices (Manila, Makati, Quezon)
 2. Program will ask if user will register patient info
 3. Program will ask for patient's info
-  - for ONE patient only
+  - for ONE patient pa lang
 4. Program will present patient's info (without chosen hospital pa)
 5. End
 
 **To do:**
-1. csv file
-2. user will be able to choose a hospital
-3. user will be able to input N records (patient's info)
-4. show patient's chosen hospital at the end of the program
+1. user will be able to choose a hospital
+2. user will be able to input N records (patient's info)
+3. show patient's chosen hospital at the end of the program
 
 **optional:**
 1. make it more complicated (??) idk if ok na itong code natin huhu maybe it's too /simple/ for sir's standards chz
