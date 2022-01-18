@@ -43,7 +43,12 @@ progress:
 1. code to open and read the csv file
 2. user will be able to choose a hospital
 3. user will be able to input N records (patient's info)
-4. show patient's chosen hospital at the end of the program
+4. store patient's chosen hospital in the data structure
 
 **optional:**
 1. make it more complicated (??) idk if ok na itong code natin huhu maybe it's too /simple/ for sir's standards chz
+
+**suggestion**
+1. User login at the start of the program
+  - username (or email?) and password will be stored in a csv file 
+  - we'll be asking for one patient basic info lang (not N na, since idt may sense if we ask for N info since user login naman)
