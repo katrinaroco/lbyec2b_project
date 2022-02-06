@@ -10,6 +10,11 @@ typedef struct
 	char sex[1];
 } Patient;
 
+typedef struct
+{
+   char *city_name, *hospital_name, *address_name;
+} hospital_data;
+
 void remove_newline();
 void fgets_remove_newline(char a[]);
 
