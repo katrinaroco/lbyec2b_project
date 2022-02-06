@@ -134,8 +134,8 @@ hospital_data loadcsv(const char *filename){
     FILE *fp = fopen(filename, "r");
     if (!fp)
     {
-        printf("Error reading CSV File. Make sure \"%s\" is present.", filename);
-        exit(-1);
+        printf("Error");
+        return 0;
     }
 
     char buffer[1024];
