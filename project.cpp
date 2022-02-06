@@ -128,3 +128,58 @@ void displayinfo(Patient info)
 	printf("Contact Number: %s\n", info.number);
 	printf("Address: %s\n", info.address);
 }
+
+hospital_data loadcsv(const char *filename){
+    // Open file for reading
+    FILE *fp = fopen(filename, "r");
+    if (!fp)
+    {
+        printf("Error reading CSV File. Make sure \"%s\" is present.", filename);
+        exit(-1);
+    }
+
+    char buffer[1024];
+    int row_count = 0;
+    int field_count = 0;
+
+    hospital_data records[1024];
+	
+	int i = 0;
+    while (fgets(buffer, 1024, fp)){
+    //	printf("%s\n", buffer);}
+    
+    	field_count = 0;
+    	row_count++;
+    	
+        if (row_count == 1){
+            continue;
+        }
+        
+        char *buffer_pointer = buffer;
+        char *field;
+        field = strtok(buffer, ",");
+    	
+        while(field){
+        //printf("%d", field_count);
+        	switch(field_count){
+        		case 0:
+        			records->city_name = field;
+        		//	printf("%s, ", records->city_name);
+        		 break;
+        		case 1:
+        			records->hospital_name = field;
+        		//	printf("%s, ", records->hospital_name);
+        			break;
+        		case 2:
+        			records->address_name = field;
+        			printf("%s ", records->address_name);
+        			break;
+			}
+    		field = strtok(NULL, ","); 
+    		field_count++;
+        }
+    }
+    fclose(fp);
+    return *records;
+}
+
