@@ -13,7 +13,7 @@ int main()
 	
 	printf("Metro Manila Hospital Locator & Registration\n");
 	printf("Please enter your city: \n");
-	printf("1. Manila\n2. Makati\n3. Quezon\n");
+	printf("1. Caloocan\n2. Las Piñas\n3. Mandaluyong\n4. Manila\n5. Marikini\n6. Muntinlupa\n7. Pasig\n8. Quezon\n9. Valenzuela\n");
 	scanf("%d", &city);
 	
 	switch(city){
