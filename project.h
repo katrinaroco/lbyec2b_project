@@ -17,6 +17,7 @@ typedef struct
 
 void remove_newline();
 void fgets_remove_newline(char a[]);
+hospital_data loadcsv(const char *filename);
 
 int askregistration();
 Patient createinfo();
