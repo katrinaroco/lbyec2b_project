@@ -6,11 +6,22 @@
 int main()
 {
 	
+	int city, answer;
+	
 	start:
-	printf("Metro Manila Hospital Locator & Registration\n");
-	choosehospital();
-	createinfo();
-			
+	const char *filename = "project.csv";  
+    	hospital_data **records = loadCSV(filename);
+    	if (!records)
+	{
+        printf("ERROR in loading the .csv file.");
+        return -1;
+    	}
+    
+	asciiart();
+	choosehospital(records);
+	Patient information;
+    	information = createinfo();
+	displayinfo(information);
 				
 	printf("yay!\n");
 
