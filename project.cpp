@@ -16,54 +16,63 @@ void choosehospital (hospital_data **records)
 			printf("Hospitals around Caloocan\n");
 			printf("..presenting choices\n");
 			hospital_print(city, records);
+			choose_hospital_number(records);
 			answer = askregistration(records);
 			break;
 		case 2:
 			printf("Hospitals around Las Pinas\n");
 			printf("..presenting choices\n");
 			hospital_print(city, records);
+			choose_hospital_number(records);
 			answer = askregistration(records);
 			break;
 		case 3:
 			printf("Hospitals around Mandaluyong\n");
 			printf("..presenting choices\n");
 			hospital_print(city, records);
+			choose_hospital_number(records);
 			answer = askregistration(records);			
 			break;
 		case 4:
 			printf("Hospitals around Manila\n");
 			printf("..presenting choices\n");
 			hospital_print(city, records);
+			choose_hospital_number(records);
 			answer = askregistration(records);			
 			break;
 		case 5:
 			printf("Hospitals around Marikina\n");
 			printf("..presenting choices\n");
 			hospital_print(city, records);
+			choose_hospital_number(records);
 			answer = askregistration(records);			
 			break;
 		case 6:
 			printf("Hospitals around Muntinlupa\n");
 			printf("..presenting choices\n");
 			hospital_print(city, records);
+			choose_hospital_number(records);
 			answer = askregistration(records);			
 			break;
 		case 7:
 			printf("Hospitals around Pasig\n");
 			printf("..presenting choices\n");
 			hospital_print(city, records);
+			choose_hospital_number(records);
 			answer = askregistration(records);			
 			break;
 		case 8:
 			printf("Hospitals around Quezon\n");
 			printf("..presenting choices\n");
 			hospital_print(city, records);
+			choose_hospital_number(records);
 			answer = askregistration(records);			
 			break;
 		case 9:
 			printf("Hospitals around Valenzuela\n");
 			printf("..presenting choices\n");
 			hospital_print(city, records);
+			choose_hospital_number(records);
 			answer = askregistration(records);			
 			break;
 	}
@@ -71,7 +80,7 @@ void choosehospital (hospital_data **records)
 
 void hospital_print(int casenum, hospital_data **data)
 {	
-	size_t i=0, check, row, number;
+	size_t i=0, check, row;
 	
 	if(casenum == 1){
 		for (i = 0; data[i] != NULL; i++){
@@ -81,10 +90,6 @@ void hospital_print(int casenum, hospital_data **data)
 				printf("%d. %s\n", i+1, data[i]->hospital_name);
 			}
 		}
-		printf("\nChoose the number of the hospital you'll pick: ");
-		scanf("%d", &number);
-		remove_newline();
-		hospital_number(number, data);
 	}
 	
 	else if(casenum == 2){
@@ -95,10 +100,6 @@ void hospital_print(int casenum, hospital_data **data)
 				printf("%d. %s\n", i+1, data[i]->hospital_name);
 			}
 		}
-		printf("\nChoose the number of the hospital you'll pick: ");
-		scanf("%d", &number);
-		remove_newline();
-		hospital_number(number, data);
 	}
 
 	else if(casenum == 3){
@@ -109,10 +110,6 @@ void hospital_print(int casenum, hospital_data **data)
 				printf("%d. %s\n", i+1, data[i]->hospital_name);
 			}
 		}
-		printf("\nChoose the number of the hospital you'll pick: ");
-		scanf("%d", &number);
-		remove_newline();
-		hospital_number(number, data);
 	}
 
 	else if(casenum == 4){
@@ -123,10 +120,6 @@ void hospital_print(int casenum, hospital_data **data)
 				printf("%d. %s\n", i+1, data[i]->hospital_name);
 			}
 		}	
-		printf("\nChoose the number of the hospital you'll pick: ");
-		scanf("%d", &number);
-		remove_newline();
-		hospital_number(number, data);
 	}
 
 	else if(casenum == 5){
@@ -137,10 +130,6 @@ void hospital_print(int casenum, hospital_data **data)
 				printf("%d. %s\n", i+1, data[i]->hospital_name);
 			}
 		}
-		printf("\nChoose the number of the hospital you'll pick: ");
-		scanf("%d", &number);
-		remove_newline();
-		hospital_number(number, data);
 	}
 
 	else if(casenum == 6){
@@ -151,10 +140,6 @@ void hospital_print(int casenum, hospital_data **data)
 				printf("%d. %s\n", i+1, data[i]->hospital_name);
 			}
 		}
-		printf("\nChoose the number of the hospital you'll pick: ");
-		scanf("%d", &number);
-		remove_newline();
-		hospital_number(number, data);
 	}
 
 	else if(casenum == 7){
@@ -165,10 +150,6 @@ void hospital_print(int casenum, hospital_data **data)
 				printf("%d. %s\n", i+1, data[i]->hospital_name);
 			}
 		}	
-		printf("\nChoose the number of the hospital you'll pick: ");
-		scanf("%d", &number);
-		remove_newline();
-		hospital_number(number, data);
 	}
 
 	else if(casenum == 8){
@@ -179,10 +160,6 @@ void hospital_print(int casenum, hospital_data **data)
 				printf("%d. %s\n", i+1, data[i]->hospital_name);
 			}
 		}
-		printf("\nChoose the number of the hospital you'll pick: ");
-		scanf("%d", &number);
-		remove_newline();
-		hospital_number(number, data);
 	}
 
 	else if(casenum == 9){
@@ -193,11 +170,17 @@ void hospital_print(int casenum, hospital_data **data)
 				printf("%d. %s\n", i+1, data[i]->hospital_name);
 			}
 		}	
-		printf("\nChoose the number of the hospital you'll pick: ");
-		scanf("%d", &number);
-		remove_newline();
-		hospital_number(number, data);
 	}
+}
+
+void choose_hospital_number(hospital_data **data)
+{
+	size_t number;
+	
+	printf("\nChoose the number of the hospital you'll pick: ");
+	scanf("%d", &number);
+	remove_newline();
+	hospital_number(number, data);
 }
 
 Patient hospital_number(size_t row, hospital_data **data)
