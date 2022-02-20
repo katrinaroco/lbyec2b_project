@@ -5,9 +5,6 @@
 
 int main()
 {
-	
-	int city, answer;
-	
 	start:
 	const char *filename = "project.csv";  
     	hospital_data **records = loadCSV(filename);
