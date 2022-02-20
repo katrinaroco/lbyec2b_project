@@ -19,6 +19,7 @@ void remove_newline();
 void fgets_remove_newline(char a[]);
 void choosehospital(hospital_data **);
 void hospital_print(int casenum, hospital_data **);
+void choose_hospital_number(hospital_data **);
 Patient hospital_number(size_t row, hospital_data **);
 int askregistration(hospital_data **);
 Patient createinfo();
