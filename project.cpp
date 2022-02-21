@@ -16,64 +16,46 @@ void choosehospital (hospital_data **records)
 			printf("Hospitals around Caloocan\n");
 			printf("..presenting choices\n");
 			hospital_print(city, records);
-			choose_hospital_number(records);
-			answer = askregistration(records);
 			break;
 		case 2:
 			printf("Hospitals around Las Pinas\n");
 			printf("..presenting choices\n");
 			hospital_print(city, records);
-			choose_hospital_number(records);
-			answer = askregistration(records);
 			break;
 		case 3:
 			printf("Hospitals around Mandaluyong\n");
 			printf("..presenting choices\n");
-			hospital_print(city, records);
-			choose_hospital_number(records);
-			answer = askregistration(records);			
+			hospital_print(city, records);		
 			break;
 		case 4:
 			printf("Hospitals around Manila\n");
 			printf("..presenting choices\n");
-			hospital_print(city, records);
-			choose_hospital_number(records);
-			answer = askregistration(records);			
+			hospital_print(city, records);			
 			break;
 		case 5:
 			printf("Hospitals around Marikina\n");
 			printf("..presenting choices\n");
-			hospital_print(city, records);
-			choose_hospital_number(records);
-			answer = askregistration(records);			
+			hospital_print(city, records);			
 			break;
 		case 6:
 			printf("Hospitals around Muntinlupa\n");
 			printf("..presenting choices\n");
-			hospital_print(city, records);
-			choose_hospital_number(records);
-			answer = askregistration(records);			
+			hospital_print(city, records);			
 			break;
 		case 7:
 			printf("Hospitals around Pasig\n");
 			printf("..presenting choices\n");
-			hospital_print(city, records);
-			choose_hospital_number(records);
-			answer = askregistration(records);			
+			hospital_print(city, records);		
 			break;
 		case 8:
 			printf("Hospitals around Quezon\n");
 			printf("..presenting choices\n");
-			hospital_print(city, records);
-			choose_hospital_number(records);
-			answer = askregistration(records);			
+			hospital_print(city, records);		
 			break;
 		case 9:
 			printf("Hospitals around Valenzuela\n");
 			printf("..presenting choices\n");
-			hospital_print(city, records);
-			choose_hospital_number(records);
-			answer = askregistration(records);			
+			hospital_print(city, records);		
 			break;
 	}
 }
@@ -119,7 +101,7 @@ void hospital_print(int casenum, hospital_data **data)
 				row = i;
 				printf("%d. %s\n", i+1, data[i]->hospital_name);
 			}
-		}	
+		}
 	}
 
 	else if(casenum == 5){
@@ -149,7 +131,7 @@ void hospital_print(int casenum, hospital_data **data)
 				row = i;
 				printf("%d. %s\n", i+1, data[i]->hospital_name);
 			}
-		}	
+		}
 	}
 
 	else if(casenum == 8){
@@ -169,18 +151,19 @@ void hospital_print(int casenum, hospital_data **data)
 				row = i;
 				printf("%d. %s\n", i+1, data[i]->hospital_name);
 			}
-		}	
+		}
 	}
 }
 
-void choose_hospital_number(hospital_data **data)
+int choose_hospital_number(hospital_data **data)
 {
 	size_t number;
 	
 	printf("\nChoose the number of the hospital you'll pick: ");
 	scanf("%d", &number);
 	remove_newline();
-	hospital_number(number, data);
+	
+	return number;
 }
 
 Patient hospital_number(size_t row, hospital_data **data)
@@ -190,10 +173,8 @@ Patient hospital_number(size_t row, hospital_data **data)
 	
 	right_row = row - 1;
 	
-	for (i = 0; i < 2; i++){
-		info.hospital = data[right_row]->hospital_name;
-		info.hospital_address = data[right_row]->address_name;
-	}
+	info.hospital = data[right_row]->hospital_name;
+	info.hospital_address = data[right_row]->address_name;
 	
 	return info;
 }
@@ -216,7 +197,8 @@ void fgets_remove_newline(char a[])
 
 int askregistration(hospital_data **records)
 {
-	int choice;	
+	int choice, row_num;
+	Patient information;	
 	printf("Register?\n");
 	printf("1. Yes 2. No 3. Go back\n");
 	scanf("%d", &choice);
@@ -224,16 +206,26 @@ int askregistration(hospital_data **records)
 	if(choice == 1)
 	{
 		remove_newline();
+ 	 	information = createinfo(records);
+    		row_num = choose_hospital_number(records);
+		information = hospital_number(row_num, records);
+		displayinfo(information, records);
+		
 		return 0;
 	}
 	else if(choice == 2)
 	{
-		printf("Session ended.\n");
-		exit(0);
+		choosehospital(records);
+		Patient information;
+    	row_num = choose_hospital_number(records);
+		information = hospital_number(row_num, records);
+		printf("Hospital: %s\n", information.hospital);
+		printf("Hospital address: %s\n", information.hospital_address);
 	}
 	else if(choice == 3)
 	{
-		choosehospital(records);
+		printf("Session ended.\n");
+		exit(0);
 	}
 	else
 	{
@@ -242,9 +234,10 @@ int askregistration(hospital_data **records)
 	}
 }
 
-Patient createinfo()
+Patient createinfo(hospital_data **data)
 {
 	Patient info;
+	int row_num;
 	
 	//getting last name
 	printf("Last name: ");
@@ -290,6 +283,8 @@ Patient createinfo()
 	fgets(info.address,sizeof(info.address),stdin);	
 	fgets_remove_newline(info.address);	
 	
+	choosehospital(data);
+	
 	return info;
 }
 
@@ -318,7 +313,7 @@ bool check_number(char num[])
 	}
 }
 
-void displayinfo(Patient info)
+void displayinfo(Patient info, hospital_data **data)
 {
 	printf("\nPatient info: \n");
 	printf("Name: %s, %s\n", info.last_name, info.first_name);
@@ -367,7 +362,7 @@ void processWord(char *field, int columnNum, hospital_data *records)
         	break;
        	case 3:
         	records->address_name = strdup(field);
-       	//	printf("%s ", records->address_name);
+       		//	printf("%s ", records->address_name);
     }
 }
 
@@ -448,7 +443,7 @@ hospital_data **loadCSV(const char *filename)
         }
         records = newreport;
     }
-    records[row_count] = NULL; // terminate data structure with NULL
+    records[row_count] = NULL; 
     fclose(fp);
     return records;
 }
