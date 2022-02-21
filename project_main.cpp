@@ -5,6 +5,9 @@
 
 int main()
 {
+	
+	int row_num;
+	
 	start:
 	const char *filename = "project.csv";  
     	hospital_data **records = loadCSV(filename);
@@ -15,11 +18,8 @@ int main()
     	}
     
 	asciiart();
-	choosehospital(records);
-	Patient information;
-    	information = createinfo();
-	displayinfo(information);
+	askregistration(records);
 				
-	printf("yay!\n");
+	//printf("yay!\n");
 
 }
