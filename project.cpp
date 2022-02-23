@@ -333,9 +333,11 @@ void asciiart()
 	
 	printf("%c%c%c%c%c %c%c%c %c%c%c %c%c%c %c%c%c  ", c1, c2, c3, c2, c1, c1, c2, c2, c2, c1, c2, c1, c2, c1, c1, c2, c1); //metro 1
 	printf("%c%c%c%c%c %c%c%c %c%c %c %c %c   %c%c%c  ", c1, c2, c3, c2, c1, c3, c2, c1, c1, c3, c1, c1, c1, c3, c2, c1);  //manila 1
-	printf("%c%c%c %c%c%c %c%c %c%c%c %c %c%c%c %c%c%c %c\n", c1, c3, c1, c1, c2, c1, c1, c2, c1, c2, c1, c1, c2, c1, c2, c1, c2, c1, c1); //hospital 1
+	printf("%c%c%c %c%c%c %c %c  ", c1, c2, c3, c1, c2, c1, c1, c1); //doh 1
+	printf("%c %c %c%c%c %c%c %c%c%c %c %c%c%c %c%c%c %c\n", c1, c1, c1, c2, c1, c1, c2, c1, c2, c1, c1, c2, c1, c2, c1, c2, c1, c1); //hospital 1
 	printf("%c %c %c %c%c%c  %c  %c%c%c %c%c%c  ", c1, c2, c1, c1, c1, c3, c1, c1, c2, c3, c1, c3, c1); //metro 2
 	printf("%c %c %c %c%c%c %c %c%c %c %c%c%c %c%c%c  ", c1, c2, c1, c1, c2, c1, c1, c2, c1, c1, c1, c3, c3, c1, c2, c1); //manila 2
+	printf("%c%c%c %c%c%c %c%c%c  ", c1, c3, c2, c1, c3, c1, c1, c2, c1); //doh 2
 	printf("%c%c%c %c%c%c %c%c %c%c%c %c  %c  %c%c%c %c%c%c\n\n", c1, c2, c1, c1, c3, c1, c3, c1, c1, c2, c2, c1, c1, c1, c2, c1, c1, c3, c3); //hospital 2
 	
 	printf("%c   %c%c%c %c%c%c %c%c%c %c%c%c %c%c%c %c%c%c  ", c1, c1, c2, c1, c1, c2, c2, c3, c2, c1, c2, c1, c2, c1, c2, c1, c1, c2, c1); //locator 1
