@@ -217,7 +217,7 @@ int askregistration(hospital_data **records)
 	{
 		choosehospital(records);
 		Patient information;
-    	row_num = choose_hospital_number(records);
+    		row_num = choose_hospital_number(records);
 		information = hospital_number(row_num, records);
 		printf("Hospital: %s\n", information.hospital);
 		printf("Hospital address: %s\n", information.hospital_address);
